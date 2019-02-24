@@ -1,0 +1,19 @@
+<div class="login-container">
+    <div class="login-inner">
+        <form ng-submit="Login.login()" ng-if="!Login.forgotPassword" class="no-bottom-margin">
+            <h1>Please log in!</h1>
+
+            <p>
+                <input type="email" ng-model="Login.email" size="30" placeholder="Email address..." />
+                <br />
+                <input type="password" ng-model="Login.password" size="30" placeholder="Password..." />
+            </p>
+
+            <p><input type="submit" value="Log in" /></p>
+
+            <p class="no-bottom-margin">
+                <a>Forgot your password?</a>
+            </p>
+        </form>
+    </div>
+</div>

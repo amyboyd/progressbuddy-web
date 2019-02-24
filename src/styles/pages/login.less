@@ -1,0 +1,47 @@
+.login-container {
+    background: @primaryColor; /* Old browsers */
+    background: -moz-linear-gradient(top, @primaryColor 0%,  darken(@primaryColor, 15%) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, @primaryColor 0%, darken(@primaryColor, 15%) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, @primaryColor 0%, darken(@primaryColor, 15%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+
+    background-size: auto auto;
+    background-position: bottom center;
+    background-repeat: repeat-x;
+    height: 100%;
+
+    .login-inner {
+        text-align: center;
+        margin: 50px auto 0;
+        padding: 25px;
+        width: 360px;
+        border-radius: 5px;
+        background-color: white;
+        box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.5);
+
+        h1 {
+            margin-top: 20px;
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="tel"] {
+            display: block;
+            width: 100%;
+            padding-left: 10px;
+            padding-right: 10px;
+            text-align: center;
+        }
+        input[type="submit"] {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    input[type="submit"], button, a.button {
+        background-color: @primaryColor;
+        color: white;
+    }
+}

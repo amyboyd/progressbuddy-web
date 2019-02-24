@@ -1,0 +1,85 @@
+<h1 class="page-title">Client: {{ ViewCtrl.client.name }}</h1>
+
+<div class="page-content" ng-if="ViewCtrl.client">
+    <div class="page-content-section">
+        <h2>Details</h2>
+
+        <div class="alternating-details">
+            <p>
+                <b>Name:</b>
+                {{ ViewCtrl.client.name }}
+            </p>
+
+            <p>
+                <b>Phone:</b>
+                {{ ViewCtrl.client.phone }}
+            </p>
+
+            <p>
+                <b>Address:</b>
+                {{ ViewCtrl.client.address }}
+            </p>
+
+            <p>
+                <b>Last Check-In:</b>
+                <span ng-if="ViewCtrl.client.lastCheckedInAt">
+                    {{ ViewCtrl.client.lastCheckedInDescription }},
+                    at
+                    {{ ViewCtrl.client.lastCheckedInAt | date }}
+                </span>
+            </p>
+        </div>
+    </div>
+
+    <div class="page-content-section">
+        <h2>Events</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Event Type</th>
+                    <th>When</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="event in ViewCtrl.events">
+                    <td>
+                        {{ event.bodyText }}
+                    </td>
+
+                    <td>
+                        {{ event.date | date }}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="page-content-section">
+        <h2>Progress</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Factor</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="row in ViewCtrl.progress">
+                    <td>
+                        {{ row.type.toLowerCase() }}
+                    </td>
+
+                    <td>
+                        <p ng-repeat="item in row.history">
+                            Score: {{ item.score }}<br />
+                            Comment: {{ item.comment }}<br />
+                            Date: {{ item.date | date }}
+                        </p>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

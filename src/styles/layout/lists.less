@@ -1,0 +1,60 @@
+ul,
+ol {
+    margin-left: 1.3em;
+
+    > li:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+ul {
+    li:before {
+        content: "\f101"; /* FontAwesome icon: angle-double-right */
+        font-family: FontAwesome;
+        display: inline-block;
+        width: 1.3em;
+        margin-left: -1.3em;
+        color: darken(@primaryColor, 20%);
+    }
+
+    &.bullet {
+        list-style: disc;
+
+        li {
+            &:before {
+                content: '';
+                display: none;
+            }
+        }
+    }
+
+    &.dropdown-menu {
+        min-width: 375px;
+
+        li {
+            font-size: @defaultFontSize;
+            line-height: @defaultLineHeight;
+            padding: 1em 1.5em;
+            margin-bottom: 0;
+
+            &:hover {
+                background-color: #f5f5f5;
+            }
+
+            &:before {
+                content: '';
+                display: none;
+            }
+        }
+    }
+}
+
+ol {
+    margin-left: 1.3em;
+    list-style-type: decimal;
+}
+
+ul.short-list li,
+ol.short-list li {
+    margin-bottom: 0;
+}

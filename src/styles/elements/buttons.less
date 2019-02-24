@@ -1,0 +1,81 @@
+button,
+input[type="submit"],
+a.button {
+    background-color: @primaryColor;
+    padding: 8px 18px;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 27px;
+    outline: none;
+
+    .fa {
+        margin-right: 5px;
+    }
+    .danger {
+        background-color: red;
+    }
+
+    &:hover {
+        position: relative;
+        top: -1px;
+        box-shadow: 0px 1px 4px rgba(100, 100, 100, 0.7);
+        text-decoration: none;
+    }
+
+    & + button,
+    & + input[type="submit"],
+    & + a.button {
+        margin-left: 20px;
+    }
+
+    &.green {
+        background-color: #00C74E;
+    }
+    &.yellow {
+        background-color: #dcae06;
+    }
+    &.purple {
+        background-color: #a125fb;
+    }
+    &.cancel,
+    &.deemphasize,
+    &.delete {
+        background-color: inherit;
+        color: #666;
+        border: 1px solid #999;
+    }
+
+    &.delete:hover {
+        background-color: red;
+        color: white;
+    }
+
+    &.disabled {
+        pointer-events: none;
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+}
+
+.horiz-button-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    button,
+    input[type="submit"],
+    a.button {
+        margin-left: 0;
+        margin-right: 20px;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,49 @@
+<h1 class="page-title">Clients</h1>
+
+<div class="page-content">
+    <div class="list-actions">
+        <a class="button">
+            Add Client
+        </a>
+    </div>
+
+    <div ng-if="ListCtrl.count > 0" class="page-content-section">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Phone Number</th>
+                    <th>Address</th>
+                    <th>Last Checked In</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="client in ListCtrl.clients" row-href="/clients/{{ client.clientID }}">
+                    <td>
+                        {{ client.name }}
+                    </td>
+
+                    <td>
+                        {{ client.phone }}
+                    </td>
+
+                    <td>
+                        {{ client.address }}
+                    </td>
+
+                    <td>
+                        <span ng-if="client.lastCheckedInAt">
+                            {{ client.lastCheckedInDescription }},
+                            at
+                            {{ client.lastCheckedInAt | date }}
+                        </span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div ng-if="ListCtrl.count === 0" class="page-content-section">
+        <p>No clients were found.</p>
+    </div>
+</div>

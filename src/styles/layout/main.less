@@ -1,0 +1,113 @@
+@pageTitleZIndex: 100;
+
+html, body {
+    height: 100%;
+}
+
+body > .layout-container {
+    display: flex;
+    height: 100%;
+    overflow: hidden;
+
+    > header,
+    > main {
+        overflow: scroll;
+    }
+}
+
+main,
+main > [ng-view] {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+main {
+    background-color: @pageContentBackground;
+}
+
+.page-title {
+    background: @primaryColor; /* Old browsers */
+    background: -moz-linear-gradient(left, @primaryColor 0%, @primaryColor 66%, darken(@primaryColor, 10%) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, @primaryColor 0%, @primaryColor 66%, darken(@primaryColor, 10%) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, @primaryColor 0%, @primaryColor 66%, darken(@primaryColor, 10%) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    color: white;
+    padding: 15px 30px;
+    margin: 0;
+    letter-spacing: 1px;
+    transition: padding-top 0.1s linear,
+                padding-bottom 0.1s linear,
+                font-size 0.1s linear;
+}
+
+main.scrolled {
+    .page-title {
+        padding-top: 6px;
+        padding-bottom: 6px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        font-size: 25px;
+        z-index: @pageTitleZIndex;
+    }
+
+    .page-content {
+        padding-top: 70px;
+    }
+}
+
+.page-content {
+    padding: 25px 30px;
+    flex: 1;
+
+    .list-actions {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 1em;
+
+        ff-table-search {
+            height: 44px;
+            margin-left: auto;
+        }
+    }
+}
+
+.page-after-content {
+    color: darken(@pageContentBackground, 35);
+    padding: 25px 30px;
+    text-align: center;
+    flex: 1;
+    font-size: 18px;
+
+    i.fa {
+        font-size: 20px;
+        margin-right: 5px;
+        position: relative;
+        top: 1px;
+    }
+
+    a:not(.button) {
+        text-decoration: underline;
+        color: inherit;
+    }
+}
+
+.page-content-section {
+    .pageContentSection();
+}
+
+.loading-animation {
+    background: rgba(0, 0, 0, .2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // z-index must be greater than that of modals.
+    z-index: 1100;
+}
+
+h2.contains-search {
+    display: flex;
+    justify-content: space-between;
+}

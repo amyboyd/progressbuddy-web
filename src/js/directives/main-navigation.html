@@ -1,0 +1,28 @@
+<a href="/#/"
+    ng-class="{active: NavCtrl.isOnPage('/')}">
+    <i class="fa fa-th-large"></i>
+    Dashboard
+</a>
+
+<a href="/#/clients"
+    ng-class="{active: NavCtrl.isOnPage('/clients*')}">
+    <i class="fa fa-star"></i>
+    Clients
+</a>
+
+<a href="/#/events"
+    ng-class="{active: NavCtrl.isOnPage('/events*')}">
+    <i class="fa fa-ticket"></i>
+    Event Log
+</a>
+
+<a href="/#/my-account"
+    ng-class="{active: NavCtrl.isOnPage('/my-account')}">
+    <i class="fa fa-user"></i>
+    My Account
+</a>
+
+<a ng-click="NavCtrl.promptToLogout()">
+    <i class="fa fa fa-sign-out"></i>
+    Log Out
+</a>

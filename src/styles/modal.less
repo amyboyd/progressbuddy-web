@@ -1,0 +1,36 @@
+.modal.fade {
+    background-color: rgba(10, 16, 52, 0.37);
+}
+
+.modal-footer {
+    text-align: left;
+}
+.modal-footer.center {
+    text-align: center;
+}
+.modal-footer.right {
+    text-align: right;
+}
+
+.modal-footer > * {
+    display: inline-block;
+}
+
+.modal-body {
+    textarea {
+        width: 100%;
+    }
+    select {
+        max-width: 100%;
+    }
+    table.options-table tbody tr:last-of-type {
+        td, th {
+            border-bottom: none;
+        }
+    }
+}
+
+.modal-header.with-action {
+    display: flex;
+    justify-content: space-between;
+}

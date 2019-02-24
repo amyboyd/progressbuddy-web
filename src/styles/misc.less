@@ -1,0 +1,91 @@
+body, input, textarea, select, button {
+    font-size: @defaultFontSize;
+    color: @defaultFontColor;
+
+    @media screen {
+        font-family: 'Source Sans Pro', sans-serif;
+    }
+}
+
+a {
+    @color: darken(@primaryColor, 20%);
+
+    color: @color;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+        color: @color;
+    }
+}
+
+[ng-click],
+[row-href] {
+    // This covers e.g. `<tr ng-click>` and `<div row-href>`.
+    cursor: pointer;
+}
+
+h1, h2, h3 {
+    margin-bottom: 1em;
+    font-weight: bold;
+    line-height: 1.25em;
+}
+
+h1 {
+    font-size: 30px;
+}
+
+h2 {
+    font-size: 27px;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p a.button.block {
+    display: inline-block;
+}
+
+form, p, ul, ol, li, fieldset, hr {
+    margin-bottom: 1em;
+}
+
+.expander {
+    cursor: pointer;
+}
+
+hr {
+    border-top: 2px solid #8c8b8b;
+}
+
+b {
+    font-weight: bold;
+}
+
+.no-bottom-margin {
+    margin-bottom: 0;
+}
+
+.alternating-details {
+    display: flex;
+    flex-wrap: wrap;
+
+    p {
+        width: 50%;
+    }
+}
+
+p, li, td, th {
+    line-height: 1.5em;
+}
+
+::selection {
+    background: @primaryColor;
+    color: white;
+}
+
+p.deemphasize {
+    .deemphasizeText();
+}

@@ -1,0 +1,115 @@
+form {
+    p {
+        margin-bottom: 1.5em;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 0.3em;
+    }
+
+    label.for-radio {
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    fieldset {
+        padding: 20px;
+    }
+
+    fieldset legend {
+        padding: 0 5px;
+        font-weight: bold;
+    }
+
+    fieldset p:last-of-type {
+        margin-bottom: 0;
+    }
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+input[type="password"],
+input[type="url"],
+input[type="date"],
+input[type="time"],
+input[type="tel"],
+textarea,
+select,
+.ui-select-toggle,
+.ui-select-search {
+    display: block;
+    padding: 0.4em 0.6em;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: white;
+    color: @defaultFontColor;
+    font-size: @defaultFontSize;
+
+    &[disabled] {
+        background-color: #e3e3e3;
+        cursor: not-allowed;
+    }
+}
+
+select {
+    height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+select[multiple] {
+    height: auto;
+}
+
+textarea {
+    width: 400px;
+    height: 170px;
+}
+
+// Customization for <ui-select>. A lot of the `!important` are to override Bootstrap.
+.ui-select-toggle,
+.ui-select-search,
+.ui-select-match-text {
+    height: 38px;
+    line-height: 38px;
+    padding-top: 0;
+    padding-bottom: 0;
+    outline: none;
+}
+.ui-select-toggle:hover {
+    background-color: inherit;
+    border-color: black;
+    outline: none;
+}
+.ui-select-bootstrap .ui-select-match-text span {
+    display: block;
+}
+ul.ui-select-choices.dropdown-menu {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 2px !important;
+    border-radius: 5px;
+    max-height: 250px;
+
+    li.ui-select-choices-group {
+        padding: 0 !important;
+
+        &:hover {
+            background-color: inherit !important;
+        }
+
+        .ui-select-choices-row.active span {
+            background-color: @primaryColor;
+        }
+    }
+}
+input.form-control.ui-select-search {
+    outline: none !important;
+    border-color: black !important;
+    box-shadow: none !important;
+}
+.ui-select-container {
+    width: 230px;
+    height: 38px;
+}
