@@ -26,7 +26,7 @@ angular.module('hackathon').service('SecurityService', function($location, Activ
 
         requireLoggedOut() {
             if (this.isLoggedIn()) {
-                $log.trace('Required logged out user but is logged in');
+                $log.warn('Required logged out user but is logged in');
                 $location.url('/');
                 throw new Error('Required logged out user but is logged in');
             }
